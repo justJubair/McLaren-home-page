@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #00c2de;
+}
+body{
+    font-family: 'Racing Sans One', sans-serif;
+    background: #000000;
+}
+
+/* headaer */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px 100px;
+    position: absolute;
+
+}
+
+header::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+    height: 5px;
+    width: 40%;
+    background: linear-gradient(90deg, var(--primary), transparent);
+}
+
+.logo{
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.logo img {
+    max-width: 200px;
+    filter: invert(1)
+}
+
+header .year {
+    font-size: 1rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin-top: 40px;
+}
+
+header .menu{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background: url(./assets/images/menu-3-fill.png);
+    background-size: 30px;
+    background-position: center;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+header .menu.active{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background: url(./assets/images/close-line.png);
+    background-size: 30px;
+    background-position: center;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* navigation */
+
+.nav{
+    z-index: 200;
+    position: absolute;
+    right: 100px;
+    top: 0;
+    width: 30%;
+    height: 5px;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(
+        90deg,
+        transparent,
+        var(--primary),
+        var(--primary)
+    )
+    30;
+    background: transparent;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+    transform-origin: right;   
+}
+
+.nav.active{
+ top: 100px;
+ width: 40% ;
+ height: 100px;
+ border-top: 5px solid;
+ border-bottom: none;
+}
